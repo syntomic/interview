@@ -1,5 +1,6 @@
 from list_node import ListNode
 
+
 def delete_node(head, node):
     """
     在O(1)时间内删除指定节点
@@ -7,7 +8,7 @@ def delete_node(head, node):
     if not (head and node):
         return "链表和节点必须不为空"
 
-    #要删除的节点不是尾节点
+    # 要删除的节点不是尾节点
     if node.next:
         next_node = node.next
         node.elem = next_node.elem
@@ -15,13 +16,12 @@ def delete_node(head, node):
         next_node.elem = None
         next_node.next = None
 
-    
-    #链表只要一个节点，删除头节点（也是尾节点）
+    # 链表只要一个节点，删除头节点（也是尾节点）
     elif head == node:
         node = None
         head = None
 
-    #链表中有多个节点，删除尾节点
+    # 链表中有多个节点，删除尾节点
     else:
         p = head
         while p.next != node:
@@ -29,17 +29,18 @@ def delete_node(head, node):
 
         p.next = None
         node = None
-        
+
     return head
+
 
 def delete_duplicated_node(head):
     """
-    删除重复节点
+    排序的链表中删除重复节点
     """
     first = ListNode(-1)
-    first.next = head # first.next 为第一个不重复的结点
-    last = first # last 为 head 前一个结点
-    
+    first.next = head  # first.next 为第一个不重复的结点
+    last = first  # last 为 head 前一个结点
+
     while head and head.next:
 
         if head.elem == head.next.elem:
@@ -49,20 +50,21 @@ def delete_duplicated_node(head):
                 head = head.next
 
             last.next = head
-        
+
         else:
             last = head
             head = head.next
 
     return first.next
 
+
 if __name__ == "__main__":
     head = ListNode(1)
     p = head
-    
+
     i = 2
     while i <= 5:
-        if i == 3 or i == 4 :
+        if i == 3 or i == 4:
             for j in range(2):
                 p.next = ListNode(i)
                 p = p.next
@@ -71,18 +73,11 @@ if __name__ == "__main__":
             p.next = ListNode(i)
             p = p.next
             i += 1
-        
-    head.printall()
+
+    head.println()
 
     node = head.next
 
-    delete_node(head, node).printall()
+    delete_node(head, node).println()
 
-    delete_duplicated_node(head).printall()
-
-
-
-
-
-    
-    
+    delete_duplicated_node(head).println()

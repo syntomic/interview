@@ -15,9 +15,7 @@ def least_num_in_rotation_nums(nums):
     p_2 = nums_len - 1
 
     while (p_2 - p_1) > 1:
-        
         mid = (p_1 + p_2) // 2
-        
         if nums[p_1] < nums[mid]:
             p_1 = mid
         elif nums[p_2] > nums[mid]:
@@ -25,7 +23,7 @@ def least_num_in_rotation_nums(nums):
         elif nums[p_1] == nums[mid] == nums[p_2]:
             # 如果三个数字相等，只能顺序查找
             return min_in_order(nums, p_1, p_2)
-            
+
     return nums[p_2]
 
 def min_in_order(nums, p_1, p_2):

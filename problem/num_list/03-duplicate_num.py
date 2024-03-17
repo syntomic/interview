@@ -18,7 +18,7 @@ def duplicate_num(nums):
             # 不能 num[i], nums[nums[i]] = nums[nums[i]], nums[i]
             temp = nums[i]
             nums[i], nums[temp] = nums[temp], nums[i]
-            
+
     return False
 
 
@@ -31,7 +31,7 @@ def any_duplicate_num(nums):
     >>> nums = [2, 3, 5, 4, 3, 2, 6, 7]
     >>> any_duplicate_num(nums)
     3
-    '''   
+    '''
     def count_range(start, end):
         count = 0
         for i in nums:
@@ -56,8 +56,8 @@ def any_duplicate_num(nums):
             start = middle + 1
 
     return start
- 
- 
+
+
 if __name__ == "__main__":
     # 文档测试
     import doctest

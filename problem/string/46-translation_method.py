@@ -19,7 +19,7 @@ def get_translation_count(num):
             count += counts[i+1]
         else:
             count = 1
-        
+
         if i < length-1:
 
             digit1 = int(str_[i])
@@ -32,15 +32,13 @@ def get_translation_count(num):
                 else:
                     count += 1
         counts[i] = count
-        
+
     return counts[0]
 
-        
+
 if __name__=="__main__":
     print(get_translation_count(12258))
     print(get_translation_count(12319))
     print(get_translation_count(-3))
     print(get_translation_count(0))
     print(get_translation_count(5))
-
-    

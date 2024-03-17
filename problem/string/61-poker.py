@@ -5,7 +5,7 @@ def is_continuous(nums):
     """
     if len(nums) != 5:
         return False
-        
+
     dict_= {'A':1, 'J': 11, 'Q': 12, 'K': 13, 'G': 0, 'g': 0}
 
     for i in range(len(nums)):
@@ -37,5 +37,3 @@ if __name__ == "__main__":
     nums_1 = [1, 2, 4, 5, 'g']
     print(is_continuous(nums))
     print(is_continuous(nums_1))
-
-    

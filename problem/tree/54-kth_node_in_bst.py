@@ -18,19 +18,19 @@ def kth_node(root, k):
     in_order(root)
     if len(res) < k:
         return
-    
+
     return res[k-1]
 
-    
+
 if __name__ == "__main__":
-    root = TreeNode(5, 
+    root = TreeNode(5,
                         TreeNode(3,
                                     TreeNode(2),
                                     TreeNode(4)),
                         TreeNode(7,
                                     TreeNode(6),
                                     TreeNode(8)))
-    
+
     print(kth_node(root, 3).val)
 
 

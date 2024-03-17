@@ -16,7 +16,6 @@ if __name__ == "__main__":
     root = TreeNode(8,TreeNode(6,TreeNode(5),TreeNode(7)),
                     TreeNode(10,TreeNode(9),TreeNode(11)))
 
-    root.print_tree()
+    print(root)
     mirror_of_tree(root)
-    print()
-    root.print_tree()
+    print(root)

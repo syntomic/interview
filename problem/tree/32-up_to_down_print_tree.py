@@ -7,16 +7,17 @@ def print_from_top_to_bottom(root):
     if not root:
         return
 
+    # 先进先出
     queue = deque()
     queue.appendleft(root)
 
     while queue:
         node = queue.pop()
-        print(node.val, end = ' ')
+        print(node.val, end=' ')
 
         if node.left:
             queue.appendleft(node.left)
-        
+
         if node.right:
             queue.appendleft(node.right)
 
@@ -60,7 +61,6 @@ def print_zig_zag(root):
     next_ = 1
 
     stack[current].append(root)
-
     while stack[current] or stack[next_]:
         node = stack[current].pop()
         print(node.val, end=' ')
@@ -96,20 +96,19 @@ def print_from_bottom_to_top(root):
 
         while queue:
             print(queue.pop(), end = ' ')
-            
+
     mid(root)
     print(root.val)
-    
+
 
 if __name__ == "__main__":
-    root = TreeNode(8, 
+    root = TreeNode(8,
                        TreeNode(6,
                                    TreeNode(5),
                                    TreeNode(7)),
-                       TreeNode(10, 
+                       TreeNode(10,
                                     TreeNode(9),
                                     TreeNode(11)))
-    #root.print_tree()
     print_from_top_to_bottom(root)
     print('')
     print_from_bottom_to_top(root)

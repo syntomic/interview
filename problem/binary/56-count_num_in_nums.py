@@ -1,8 +1,8 @@
 def find_nums_appear_once(nums):
     """
     数组中只出现一次的两个数字
-    时间复杂度：O(n)
-    空间复杂度：O(1)
+    时间复杂度: O(n)
+    空间复杂度: O(1)
     """
     if not nums or len(nums) < 2:
         return []
@@ -78,12 +78,11 @@ if __name__ == "__main__":
     print(find_nums_appear_once(nums))
     nums_1 = [1, 1, 1, 7]
     print(find_num_appear_once(nums_1))
-    
-    
+
     from collections import Counter
 
     count = Counter(nums_1)
-    
+
     for i in count.keys():
         if count[i] == 1:
             print(i)

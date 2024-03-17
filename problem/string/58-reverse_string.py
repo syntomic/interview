@@ -4,7 +4,7 @@ def reverse_sentence(s):
 
     if len(temp) == 0:
         return s
-        
+
     return ' '.join(temp[::-1])
 
 def left_rotate_string(s, n):

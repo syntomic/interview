@@ -21,7 +21,7 @@ def number_of_1(str_n):
 
     num_first_digit = 0
 
-    # 最高位出现1的次数 
+    # 最高位出现1的次数
     if first > 1:
         num_first_digit = pow(10, len_-1)  # 1346 ~ 21345
     elif first == 1:

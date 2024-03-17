@@ -1,4 +1,5 @@
 def max_in_windows(num, size):
+    """滑动窗口的最大值"""
     if not num or size <= 0:
         return []
 
@@ -11,7 +12,7 @@ def max_in_windows(num, size):
             while deque and num[i] >= num[deque[-1]]:
                 deque.pop()
             deque.append(i)
-        
+
         for i in range(size,len(num)):
             res.append(num[deque[0]])
 

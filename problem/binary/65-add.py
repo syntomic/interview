@@ -9,10 +9,9 @@ def add(num1, num2):
         carry = (num1 & num2) << 1
         num1 = sum_
         num2 = carry
-        
+
     # 也许需要做越界检查
     return num1
-    
 
 if __name__ == "__main__":
     num1 = 5

@@ -13,7 +13,7 @@ def str_replace(string):
     str_len2 = str_len1 + 2 * space_num
     str_list = [''] * (str_len2)
     p = str_len1 - 1
-    q = str_len2 - 1 
+    q = str_len2 - 1
 
     while p != q:
         if string[p] != ' ':

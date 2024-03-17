@@ -13,12 +13,11 @@ def string_to_int(string):
                 continue
             if string[i] == '+':
                 continue
-        
+
         if string[i] in str_num:
             sum_ = sum_ * 10 + str_num.index(string[i])
         else:
             break
-        
     return sum_ * label
 
 if __name__ == "__main__":

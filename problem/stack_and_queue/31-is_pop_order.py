@@ -1,7 +1,8 @@
 def is_pop_order(push, pop):
+    """判断pop是不是压入序列push的弹出序列"""
     if push == [] or pop == []:
         return False
-    
+
     stack = []
 
     for i in push:
@@ -10,12 +11,12 @@ def is_pop_order(push, pop):
         while len(stack) and stack[-1] == pop[0]:
             stack.pop()
             pop.pop(0)
-        
-    if len(stack): 
+
+    if len(stack):
         return False
     else:
         return True
-            
+
 if __name__ == "__main__":
     push = [1, 2, 3, 4, 5]
     pop_1 = [4, 5, 3, 2, 1]

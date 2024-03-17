@@ -7,15 +7,13 @@ def merge_sorted_llist(head1, head2):
     elif not head2:
         return head1
 
-    #merge_head = None
-
     if head1.elem < head2.elem:
         merge_head = head1
         merge_head.next = merge_sorted_llist(head1.next, head2)
     else:
         merge_head = head2
         merge_head.next = merge_sorted_llist(head1, head2.next)
-        
+
     return merge_head
 
 if __name__ == "__main__":
@@ -26,7 +24,7 @@ if __name__ == "__main__":
         p.next = ListNode(2 * i - 1)
         p = p.next
 
-    head1.printall()
+    head1.println()
 
     head2 = ListNode(2)
     q = head2
@@ -35,7 +33,7 @@ if __name__ == "__main__":
         q.next = ListNode(2 * i)
         q = q.next
 
-    head2.printall()
+    head2.println()
 
     merge_head = merge_sorted_llist(head1, head2)
-    merge_head.printall()
+    merge_head.println()

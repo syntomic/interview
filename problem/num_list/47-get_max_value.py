@@ -16,7 +16,7 @@ def get_max_value(values, rows, cols):
 
             if j > 0:
                 left = max_values[j-1]
-                
+
             # f(i, j) = max(f(i-1,j),f(i,j-1)) + gift[i,j]
             max_values[j] = max(left, up) + values[i*cols+j]
 

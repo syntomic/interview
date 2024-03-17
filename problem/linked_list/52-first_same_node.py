@@ -4,21 +4,21 @@ def first_same_node(head1, head2):
     """两个链表的第一个公共节点"""
     len1 = get_length(head1)
     len2 = get_length(head2)
-    
+
     if len2 > len1:
         head1, head2 = head2, head1
-    
+
     diff = abs(len2- len1)
-    
-    for i in range(diff):
+
+    for _ in range(diff):
         head1 = head1.next
-    
+
     while head1 != None and (head2 != None) and head1 != head2:
         head1 = head1.next
         head2 = head2.next
 
     return head2
-        
+
 def get_length(head):
     len_ = 0
 

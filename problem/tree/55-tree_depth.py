@@ -25,14 +25,13 @@ def is_balanced_core(root, depth):
     if is_balanced_core(root.left, left) and is_balanced_core(root.right, right):
         diff = left - right
         if diff <= 1 & diff >= -1:
-            depth = 1 + max(left, right)
             return True
 
     return False
 
 
 if __name__ == "__main__":
-    root = TreeNode(1, 
+    root = TreeNode(1,
                         TreeNode(2,
                                     TreeNode(4),
                                     TreeNode(5,

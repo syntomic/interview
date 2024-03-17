@@ -35,15 +35,11 @@ class Stack():
         elif len(self.queue2) == 0:
             while len(self.queue1) > 1:
                 self.queue2.appendleft(self.queue1.pop())
-            
             return self.queue1.pop()
-            
         elif len(self.queue1) == 0:
             while len(self.queue2) > 1:
                 self.queue1.appendleft(self.queue2.pop())
-
             return self.queue2.pop()
-        
 
 if __name__ == "__main__":
     queue = Queue()
@@ -61,6 +57,3 @@ if __name__ == "__main__":
 
     for i in range(5):
         print(stack.pop(), end=' ')
-
-
-        

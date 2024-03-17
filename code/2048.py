@@ -21,11 +21,10 @@ def one_line(line):
 
     line_without_zero = list(filter(lambda x : x != 0, line))
 
-    
     forward = merge_same_forward(line_without_zero)
     backward = merge_same_forward(forward[::-1])[::-1]
     backward.extend([0]*(len(line) - len(backward)))
 
     return backward
-    	
+
 print(one_line([8,4,0,4]))

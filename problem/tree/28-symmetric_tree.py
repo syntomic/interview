@@ -1,6 +1,6 @@
 from tree_node import TreeNode
 
-def is_symmetical(root):
+def is_symmetrical(root):
     """判断一棵二叉树是否对称"""
     def is_symmetrical_core(root1, root2):
         """前序遍历"""
@@ -20,11 +20,11 @@ def is_symmetical(root):
 
 
 if __name__ == "__main__":
-    root = TreeNode(7, TreeNode(7, 
+    root = TreeNode(7, TreeNode(7,
                                    TreeNode(7),
                                    TreeNode(7)),
-                       TreeNode(7, 
+                       TreeNode(7,
                                    TreeNode(7)))
     #root.print_tree()
 
-    print(is_symmetical(root))
+    print(is_symmetrical(root))

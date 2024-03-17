@@ -8,7 +8,7 @@ def is_ugly(num):
 
     while num % 5 == 0:
         num /= 5
-        
+
     return num == 1
 
 def get_ugly_num_1(index):
@@ -38,23 +38,23 @@ def get_ugly_num_2(index):
     ugly_nums[0] = 1
     next_ugly_index = 1
 
-    mutiply_2_index = 0
-    mutiply_3_index = 0
-    mutiply_5_index = 0
-    
+    multiply_2_index = 0
+    multiply_3_index = 0
+    multiply_5_index = 0
+
     while next_ugly_index < index:
 
-        min_ = min(ugly_nums[mutiply_2_index] * 2, ugly_nums[mutiply_3_index] * 3, ugly_nums[mutiply_5_index] * 5)
+        min_ = min(ugly_nums[multiply_2_index] * 2, ugly_nums[multiply_3_index] * 3, ugly_nums[multiply_5_index] * 5)
         ugly_nums[next_ugly_index] = min_
-        
-        while ugly_nums[mutiply_2_index] * 2 <= min_:
-            mutiply_2_index += 1
 
-        while ugly_nums[mutiply_3_index] * 3 <= min_:
-            mutiply_3_index += 1
+        while ugly_nums[multiply_2_index] * 2 <= min_:
+            multiply_2_index += 1
 
-        while ugly_nums[mutiply_5_index] * 5 <= min_:
-            mutiply_5_index += 1
+        while ugly_nums[multiply_3_index] * 3 <= min_:
+            multiply_3_index += 1
+
+        while ugly_nums[multiply_5_index] * 5 <= min_:
+            multiply_5_index += 1
 
         next_ugly_index += 1
 

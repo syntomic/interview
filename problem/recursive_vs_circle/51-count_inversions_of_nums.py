@@ -14,23 +14,23 @@ def count_inversions_and_sort(nums1, nums2):
         if j == l2:
             nums += [nums1[x] for x in range(i, l1)]
             break
-            
+
         if nums1[i] < nums2[j]:
             nums.append(nums1[i])
             i += 1
         else:
             nums.append(nums2[j])
-            j += 1          
+            j += 1
             num_inv += (l1 - i)
-            
+
     return (num_inv, nums)
 
-    
+
 def sort_and_count_inversions(nums):
     """数组中的逆序对"""
     if len(nums) == 1:
         return (0, nums)
-    
+
     i = len(nums) >> 1
 
     l_inv, left = sort_and_count_inversions(nums[0:i])

@@ -8,7 +8,6 @@ class Solution:
         """前序遍历二叉树"""
         if not root:
             return '#,'
-        
         return str(root.val) + ',' + self.serialize(root.left) + self.serialize(root.right)
 
     def deserialize(self, s):
@@ -30,10 +29,10 @@ class Solution:
 
 if __name__ == "__main__":
     sol = Solution()
-    root = TreeNode(1, 
-                        TreeNode(2, 
+    root = TreeNode(1,
+                        TreeNode(2,
                                     TreeNode(4)),
-                        TreeNode(3, 
+                        TreeNode(3,
                                     TreeNode(5),
                                     TreeNode(6)))
 

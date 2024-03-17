@@ -15,7 +15,7 @@ def max_product_after_cutting_dynamic(length):
 
     for j in range(4, length+1):
         max_ = 0
-        for i in range(1, j // 2 + 1):
+        for i in range(1, j // 2 + 1): 
 
             temp=products[i] * products[j-i] # f(n) = max(f(i)*f(n-i))
 

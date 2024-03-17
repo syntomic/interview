@@ -5,7 +5,7 @@ def entry_node_of_loop(head):
     """
     找出链表中环的入口节点
     """
-    meet_node = meeted_node(head)
+    meet_node = meted_node(head)
 
     if not meet_node:
         return None
@@ -18,9 +18,9 @@ def entry_node_of_loop(head):
         node_in_loop += 1
         p = p.next
 
-    # 先移动p，次数为环中节点的数目  
+    # 先移动p，次数为环中节点的数目
     p = head
-    for i in range(node_in_loop):
+    for _ in range(node_in_loop):
         p = p.next
 
     # 再移动p和q
@@ -31,10 +31,10 @@ def entry_node_of_loop(head):
 
     return p
 
-def meeted_node(head):
+def meted_node(head):
     """
     在链表中存在环的前提下找到相遇节点
-    如果不存在环，就返回None
+    如果不存在环, 就返回None
     """
     if not head:
         return None
@@ -49,13 +49,13 @@ def meeted_node(head):
     while fast and slow:
         if slow == fast:
             return slow
-        
+
         slow = slow.next
 
         fast = fast.next
         if fast:
             fast = fast.next
-    
+
     return None
 
 if __name__ == "__main__":

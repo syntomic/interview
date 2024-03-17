@@ -10,7 +10,7 @@ def get_first_k(nums, k, start, end):
         if (middle_index > 0 and nums[middle_index - 1] != k) or middle_index == 0:
             return middle_index
         else:
-            end = middle_index - 1   
+            end = middle_index - 1
     elif middle_num > k:
         end = middle_index - 1
     else:
@@ -38,7 +38,7 @@ def get_last_k(nums, k, start, end):
         end = middle_index - 1
 
     return get_last_k(nums, k , start, end)
-    
+
 def get_count_of_k(nums, k):
     """计算k在排序数组中出现的次数"""
     count = 0
@@ -68,9 +68,9 @@ def get_missing_num(nums):
         if nums[middle] != middle:
             if middle == 0 or nums[middle-1] == middle - 1:
                 return middle
-            
+
             right = middle - 1
-        
+
         else:
             left = middle + 1
 
@@ -86,10 +86,10 @@ def get_num_same_as_index(nums):
 
     left = 0
     right = len(nums) - 1
-    
+
     while left <= right:
         middle = left + ((right - left) >> 1)
-        
+
         if nums[middle] == middle:
             return middle
 

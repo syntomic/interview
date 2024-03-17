@@ -10,7 +10,7 @@ def tail_to_head_stack(head):
     if not head:
         return []
 
-    result = []    
+    result = []
     q = deque()
 
     while head:
@@ -19,7 +19,7 @@ def tail_to_head_stack(head):
 
     while q:
         result.append(q.pop())
-    
+
     return result
 
 def tail_to_head_recursive(head):
@@ -28,10 +28,10 @@ def tail_to_head_recursive(head):
     """
     if not head.elem:
         return []
-    
+
     if not head.next:
         return [head.elem]
-    
+
     elm = head.elem
     head = head.next
     rev_list = tail_to_head_recursive(head)
@@ -46,8 +46,6 @@ if __name__ == "__main__":
     for i in range(2, 10):
         p.next = ListNode(i)
         p = p.next
-    
+
     print(tail_to_head_recursive(head))
     print(tail_to_head_stack(head))
-
-    

@@ -4,11 +4,11 @@ def partition(nums, start, end):
     for j in range(start+1, end+1):
         if nums[j] <=  pivot:
             i += 1
-            if j != i:                
+            if j != i:
                 nums[i], nums[j] = nums[j], nums[i]
-    
+
     nums[start], nums[i] = nums[i], nums[start]
-    
+
     return i
 
 def get_least_k_nums_1(nums, k):
@@ -41,7 +41,7 @@ def get_least_k_nums_2(nums, k):
     """
     if k < 1 or k > len(nums):
         raise ValueError("k is not correct")
-        
+
     if nums==[]:
         raise ValueError("nums is None")
 

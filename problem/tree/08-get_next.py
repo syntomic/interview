@@ -6,7 +6,7 @@ def get_next(node):
     节点有一个指向父节点的指针
     """
     if not node:
-        return 
+        return
 
     #节点有右子树， 下一个节点就是它右子树的最左节点
     elif node.right != None:
@@ -26,13 +26,13 @@ def get_next(node):
         return node.parent
 
 if __name__ == "__main__":
-    root = TreeNode('a', TreeNode('b', 
-                                       TreeNode('d'), 
-                                       TreeNode('e', 
-                                                     TreeNode('h'), 
-                                                     TreeNode('i'))), 
-                         TreeNode('c', 
-                                       TreeNode('f'), 
+    root = TreeNode('a', TreeNode('b',
+                                       TreeNode('d'),
+                                       TreeNode('e',
+                                                     TreeNode('h'),
+                                                     TreeNode('i'))),
+                         TreeNode('c',
+                                       TreeNode('f'),
                                        TreeNode('g')))
     # 需要加入指向父节点的指针
     root.print_tree()

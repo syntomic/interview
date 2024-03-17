@@ -19,7 +19,7 @@ def length_of_longest_substring(s):
             max_length = max(max_length, i-start+1)
 
         used_char[s[i]]=i
-    
+
     return max_length
 
 def length_of_longest_substring_2(s):
@@ -45,7 +45,7 @@ def length_of_longest_substring_2(s):
     if cur_len > max_len:
         max_len = cur_len
 
-    return max_len      
+    return max_len
 
 if __name__=="__main__":
     print(length_of_longest_substring('arabcacfr'))

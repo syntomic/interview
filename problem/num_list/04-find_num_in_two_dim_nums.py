@@ -17,7 +17,7 @@ def find_num_in_two_dim_nums(num, matrix, rows, columns):
         row = 0
         column = columns - 1
 
-        while row < rows and column >= 0: 
+        while row < rows and column >= 0:
             if matrix[row * columns + column] == num:
                 found = True
                 break
@@ -25,7 +25,7 @@ def find_num_in_two_dim_nums(num, matrix, rows, columns):
                 column -= 1
             else:
                 row += 1
-    
+
     return found
 
 if __name__ == "__main__":

@@ -11,7 +11,7 @@ def judge(threshold, i, j):
     else:
         return False
 
-def findgrid_recursive(threshold, rows, cols, matrix, i, j):
+def find_grid_recursive(threshold, rows, cols, matrix, i, j):
     """
     从位置(i,j)开始机器人活动范围，递归方法
     """
@@ -21,10 +21,10 @@ def findgrid_recursive(threshold, rows, cols, matrix, i, j):
 
         matrix[i][j] = 1
 
-        count = 1 + findgrid_recursive(threshold, rows, cols, matrix, i, j+1) \
-        + findgrid_recursive(threshold, rows, cols, matrix, i, j-1) \
-        + findgrid_recursive(threshold, rows, cols, matrix, i+1, j) \
-        + findgrid_recursive(threshold, rows, cols, matrix, i-1, j)
+        count = 1 + find_grid_recursive(threshold, rows, cols, matrix, i, j+1) \
+        + find_grid_recursive(threshold, rows, cols, matrix, i, j-1) \
+        + find_grid_recursive(threshold, rows, cols, matrix, i+1, j) \
+        + find_grid_recursive(threshold, rows, cols, matrix, i-1, j)
     return count
 
 def findgrid_circle(threshold, rows, cols, matrix, i, j):

@@ -12,7 +12,7 @@ def permutation_of_string(string):
                 list_.append(j)
 
     return list_
-            
+
 def permutation_of_nums(nums):
     """数组的重排"""
 

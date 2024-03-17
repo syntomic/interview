@@ -5,81 +5,54 @@ class TreeNode():
         self.right = right
         self.parent = parent
 
-    # None不是TreeNode型
+    def __str__(self):
+        return " ".join(map(str, self.get_pre_list()))
+    
     def print_tree(self):
-        """前序遍历打印"""
-        print("(" + str(self.val), end="")
+        return self.__str__()
+
+    def get_pre_list(self):
+        """得到前序遍历列表"""
         if self.left is None and self.right is None:
-            print("^^)" , end="")
-            return
+            return [self.val, "^", "^"]
         elif self.left is None:
-            print("^", end="")
-            self.right.print_tree()
-            print(")", end="")
-            return
+            return [self.val, "^", *self.right.get_pre_list()]
         elif self.right is None:
-            self.left.print_tree()
-            print("^", end="")
-            print(")", end="")
-            return
+            return [self.val, *self.left.get_pre_list(), "^"]
 
-        self.left.print_tree()
-        self.right.print_tree()
-        print(")", end="")
-        return
+        return [self.val, *self.left.get_pre_list(), *self.right.get_pre_list()]
 
-    def print_tree_1(self):
-        """前序遍历打印"""
-        print(str(self.val), end=" ")
-        if self.left is None and self.right is None:
-            print("^ ^" , end=" ")
-            return
-        elif self.left is None:
-            print("^", end=" ")
-            self.right.print_tree_1()
-            #print(")", end="")
-            return
-        elif self.right is None:
-            self.left.print_tree_1()
-            print("^", end=" ")
-            #print(")", end="")
-            return
-
-        self.left.print_tree_1()
-        self.right.print_tree_1()
-        #print(")", end="")
-        return
-    
     @staticmethod
-    def deserialize(s):
+    def deserialize(pre_list):
         """前序遍历序列转化为树"""
-        flag = -1
-    
-        def core(s, flag):
-            flag += 1
-            l = s.split(' ')
 
-            if flag >= len(s):
-                return None
+        def core(pre_list, index):
+            """
+            Args:
+                pre_list: 前缀序列
+                index: 树开始位置
+
+            Returns:
+                tree: 前缀序列所表示的树
+                index: 树结束位置
+            """
+            if index >= len(pre_list):
+                return None, -1
 
             root = None
+            if pre_list[index] != '^':
+                root = TreeNode(pre_list[index])
+                root.left, index = core(pre_list, index + 1)
+                root.right, index = core(pre_list, index + 1)
 
-            if l[flag] != '^':
-                root = TreeNode(int(l[flag]))
-                root.left, flag = core(s, flag)
-                root.right, flag = core(s, flag)
+            return root, index
 
-            return root, flag
-
-        root, flag = core(s, flag)
+        root, _ = core(pre_list, 0)
         return root
 
 
 if __name__ == "__main__":
-    s = '5 3 2 ^ ^ 4 ^ ^ 7 6 ^ ^ 8 ^ ^ '
-    root = TreeNode.deserialize(s)
+    s = [5, 3, 2, '^', '^', 4, '^', '^', 7, 6, '^', '^', 8, '^', '^']
+    tree = TreeNode.deserialize(s)
 
-
-    root.print_tree()
-    print()
-    root.print_tree_1()
+    print(tree)

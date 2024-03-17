@@ -2,7 +2,7 @@ def power(base, exponent):
     """数值的整数次方"""
     if base == exponent == 0:
         return 1
-        
+
     if base == 0 and exponent < 0 :
         raise ValueError("Denominator cannot be error")
 
@@ -14,7 +14,6 @@ def power(base, exponent):
         result = 1.0 / result
 
     return result
-
 
 
 def abs_exponent_power(base, exponent):
@@ -29,7 +28,7 @@ def abs_exponent_power(base, exponent):
 
     if exponent & 1 == 1:
         result *= base
-    
+
     return result
 
 if __name__ == "__main__":

@@ -1,36 +1,33 @@
 class MinStack():
     def __init__(self):
         self.stack=[]
-        self.minstack=[]
-    
-    def push(self, node):       
+        self.min_stack=[]
+
+    def push(self, node):
         self.stack.append(node)
 
-        if self.minstack==[] or node < self.min():
-            self.minstack.append(node)
+        if self.min_stack==[] or node < self.min():
+            self.min_stack.append(node)
         else:
-            self.minstack.append(self.min())
-        
+            self.min_stack.append(self.min())
+
     def pop(self):
-        if self.stack==[] or self.minstack==[]:
+        if self.stack==[] or self.min_stack==[]:
             return None
 
         self.stack.pop()
-        self.minstack.pop()
+        self.min_stack.pop()
 
     def min(self):
-        return self.minstack[-1]
+        return self.min_stack[-1]
 
 if __name__ == "__main__":
-    mstack = MinStack()
-    mstack.push(3)
-    mstack.push(4)
-    mstack.push(2)
-    mstack.push(1)
-    mstack.pop()
-    mstack.pop()
-    mstack.push(0)
-    print(mstack.min())
-
-    
-    
+    min_stack = MinStack()
+    min_stack.push(3)
+    min_stack.push(4)
+    min_stack.push(2)
+    min_stack.push(1)
+    min_stack.pop()
+    min_stack.pop()
+    min_stack.push(0)
+    print(min_stack.min())

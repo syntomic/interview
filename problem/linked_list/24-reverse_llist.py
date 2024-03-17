@@ -24,11 +24,7 @@ if __name__ == "__main__":
         p.next = ListNode(i)
         p = p.next
 
-    head.printall()
+    head.println()
 
-    # head = ListNode(1)
-    # head = None
     q = reverse_llist(head)
-    q.printall()
-
-    
+    q.println()

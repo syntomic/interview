@@ -11,11 +11,11 @@ def partition(nums, start, end):
         if nums[j] <=  pivot:
             i += 1
             # 避免不必要的交换
-            if j != i:                
+            if j != i:
                 nums[i], nums[j] = nums[j], nums[i]
-    
+
     nums[start], nums[i] = nums[i], nums[start]
-    
+
     return i
 
 def check_more_than_half(nums, num):
@@ -38,7 +38,7 @@ def more_than_half_num(nums):
     数组中出现次数超过一半的数字，基于partition，需要修改数组
     """
     if nums == []:
-        return "There is no elments"
+        return "There is no elements"
 
     if len(nums) == 1:
         return "Must more than two elements"
@@ -69,15 +69,15 @@ def more_than_half_num_2(nums):
     数组中超过一半的数字，基于数组特点
     """
     if nums == []:
-        return "There is no elments"
+        return "There is no elements"
     if len(nums) == 1:
         return "Must more than two elements"
 
     result = nums[0]
     times = 1
-    
+
     for i in range(1,len(nums)):
-        if times == 0: 
+        if times == 0:
             result = nums[i]
             times = 1
         elif nums[i] == result:

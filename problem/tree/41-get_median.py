@@ -62,7 +62,6 @@ def get_median(nums, len_):
         return max_.get_max()
     else:
         return (max_.get_max() + min_.get_min()) / 2
-            
 
 if __name__ == "__main__":
     nums = [4, 3, 2, 5, 1, 6, 7]

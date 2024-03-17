@@ -4,16 +4,16 @@ from tree_node import TreeNode
 树中两个节点的最低公共祖先
 """
 # BST case
-def BST(root, node1, node2):
+def bst(root, node1, node2):
     """二叉搜索树情形"""
     if root == None or node1 == None or node2 == None:
         return
 
     if node1.val < root.val > node2.val:
-        return BST(root.left, node1, node2)
+        return bst(root.left, node1, node2)
 
     elif node1.val > root.val < node2.val:
-        return BST(root.right, node1, node2)
+        return bst(root.right, node1, node2)
 
     else:
         return root
@@ -52,7 +52,7 @@ def general(root, node1, node2):
 
 
 if __name__ == "__main__":
-    binary_search_tree = TreeNode(5, 
+    binary_search_tree = TreeNode(5,
                                      TreeNode(3,
                                                  TreeNode(2),
                                                  TreeNode(4)),
@@ -60,9 +60,9 @@ if __name__ == "__main__":
                                                  TreeNode(6),
                                                  TreeNode(8)))
 
-    general_tree = TreeNode(1, 
+    general_tree = TreeNode(1,
                                 TreeNode(2,
-                                            TreeNode(4),  
+                                            TreeNode(4),
                                             TreeNode(5,
                                                         TreeNode(7))),
                                 TreeNode(3,
@@ -70,11 +70,6 @@ if __name__ == "__main__":
                                             TreeNode(6)))
 
 
-    print(BST(binary_search_tree, TreeNode(8), TreeNode(6)).val)
+    print(bst(binary_search_tree, TreeNode(8), TreeNode(6)).val)
     print(find_node(general_tree, TreeNode(2)))
     print(general(general_tree, TreeNode(4), TreeNode(7)).val)
-
-
-    
-
-    
