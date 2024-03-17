@@ -1,5 +1,5 @@
 class Solution:
-    def longestPalindrome(self, s: str) -> str:
+    def longest_palindrome(self, s: str) -> str:
         n = len(s)
         # dp[i, j]代表i到j位置是否是回文字符串
         dp = [[False for _ in range(n)] for _ in range(n)]
@@ -17,4 +17,4 @@ class Solution:
 if __name__ == "__main__":
     sol = Solution()
 
-    print(sol.longestPalindrome("adbbdads"))
+    print(sol.longest_palindrome("adbbdads"))
